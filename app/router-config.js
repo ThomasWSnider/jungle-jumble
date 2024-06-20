@@ -6,7 +6,7 @@ export const router = new Router([
   {
     path: '',
     controllers: [],
-    view: ``
+    view: `app/views/JumblesView.html`
   },
   {
     path: '',

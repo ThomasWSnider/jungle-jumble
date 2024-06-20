@@ -21,5 +21,5 @@ class ObservableAppState extends EventEmitter {
       body: 'this is extremely difficult',
     }),
   ]
-
-  export const AppState = createObservableProxy(new ObservableAppState())
+}
+export const AppState = createObservableProxy(new ObservableAppState())
