@@ -1,1 +1,12 @@
 /* BASIC STYLES HERE */
+.jumbleText {
+  width: 100%;
+  resize: none;
+}
+
+#header-text {
+  border: 2px solid black;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 9px;
+}
