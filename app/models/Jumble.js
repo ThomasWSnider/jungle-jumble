@@ -7,19 +7,40 @@ export class Jumble {
     this.body = data.body
 
     this.fastestTime = null
-    this.startTime = null
+    this.typingTime = null
     this.wPM = null
   }
 
   get JumbleSelectTemplate() {
     return `
             <div class="col-12 d-flex justify-content-around align-items-center mb-2">
-              <button class="btn btn-warning rounded-pill">start</button>
-              <h5 class="mb-1">Easy Jumble</h5>
+              <button class="btn btn-warning rounded-pill" onclick="app.JumblesController.callActiveJumble('${this.id}')">start</button>
+              <h5 class="mb-1">${this.name}</h5>
               <p class="mb-1"><i class="mdi mdi-timer"></i>
-                time</p>
-              <p class="mb-1">wpm</p>
+                ${this.fastestTime ? this.fastestTime : '--'}</p>
+              <p class="mb-1">${this.wPM ? this.wPM : '--'} wpm</p>
             </div>
             `
   }
+
+  get JumbleActiveTemplate() {
+    return `
+    <div class="col-12 jumble-card bg-light">
+      <div class="d-flex justify-content-between">
+        <h3>${this.name}</h3>
+        <h3>Fastest Time: ${this.fastestTime}s</h3>
+      </div>
+      <p>${this.body}</p>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12 d-grid gap-2 jumble-card py-3 bg-light">
+          <textarea name="body" class="jumbleText" id="jumbleBody" rows="9"></textarea>
+          <button class="btn btn-info text-light">Submit!!</button>
+        </div>
+      </div>
+    </div>
+    `
+  }
+
 }
